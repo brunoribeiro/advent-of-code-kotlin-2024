@@ -22,7 +22,7 @@ fun main() {
         .filter { report ->
             (report.indices.map { index ->
                 report.filterIndexed { i, _ -> i != index }
-            }).map { validateReport(it.zipWithNext()) }.any { it }
+            }).any { validateReport(it.zipWithNext()) }
         }
         .size
 
